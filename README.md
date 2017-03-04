@@ -1,8 +1,2 @@
-ppet>
-  <content><![CDATA[
-  	# ${1:ENEL-300-Project-4}
-
-	An Engineering design project by 2nd year Electrical Enigeering students at the Schulich School of Engineering
-  ]]></content>
-    <tabTrigger>readme</tabTrigger>
-    </snippet>
+# ENEL-300-Project-4
+An Engineering design project by 2nd year Electrical Enigeering students at the Schulich School of Engineering
