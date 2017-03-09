@@ -7,12 +7,12 @@ int CheckFrontSensor()
   
   if(irFront==0){  
     counter=0;                         
-    for(timespan=0; timespan<200; timespan++){
+    for(timespan=0; timespan<150; timespan++){
       
       if (irDetect(2,10,38000)==0){
       counter++;}
     
-      if(counter >= 200){ 
+      if(counter >= 150){ 
       StopDriving();
       return 0;}}
   }
@@ -35,7 +35,7 @@ while (1){
     
       if(counter >= 10){ 
       StopDriving();
-      exit(1);}}
+      return;}}
   }
 }
     delay(100);
