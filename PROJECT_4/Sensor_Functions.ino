@@ -34,6 +34,7 @@ while (1){
       counter++;}
     
       if(counter >= 10){ 
+      delay(300);
       StopDriving();
       return;}}
   }

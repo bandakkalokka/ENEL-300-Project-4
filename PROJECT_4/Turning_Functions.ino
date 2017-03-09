@@ -1,6 +1,6 @@
 void NinetyDegreeTurn(){
    servoLeft.writeMicroseconds(1450);
-  delay (1750);
+  delay (1700);
   servoLeft.writeMicroseconds(1500);
   delay (1000);
 }
@@ -14,5 +14,4 @@ void NinteyDegreeTurnR(){
   delay (1050);
   servoLeft.writeMicroseconds(1500);
   delay (1000);
-  exit(1);
 }
