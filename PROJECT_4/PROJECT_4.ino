@@ -22,7 +22,7 @@ void setup()
   NinetyDegreeTurn();
   StartDriving();
   FollowSideSensor();
-  
+  NinteyDegreeTurnR();
 }
 
 void loop()
