@@ -16,8 +16,8 @@
 
 Servo servoLeft;
 Servo servoRight;
-int ServoRightSpeed = 1375;
-int ServoLeftSpeed = 1700;
+int ServoRightSpeed = 1400;                                 // Ideal Right Servo Max Speed to go straight
+int ServoLeftSpeed = 1639;                                  // Ideal Left Servo Max Speed to got straight
 
 void setup() {
   servoLeft.attach(12);
