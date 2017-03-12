@@ -11,26 +11,26 @@
  *  
  * The Servo's were tested and calibrated according to Chapter 2 of the Parallax Module. 
  * CSV files were created to determine how the Rotational Velocity (RPM) changed with 
- * the Pulse Width (us). Based on this data 
+ * the Pulse Width (us). Based on this data maximum/minimum speeds and acceleration values 
+ * were chosen for the Servo's
  */
 
 #include <Servo.h>
 
 
-#define MAX_RIGHT_SPEED 1400                                        // Ideal Right Servo Max Speed to got straight
-#define MAX_LEFT_SPEED  1638                                        // Ideal Left Servo Max Speed to got straight
-#define MIN_SPEED       1500                                        // Ideal Stop Servo Speed 
-#define MAX_DELTA_SPEED (MAX_LEFT_SPEED - MAX_RIGHT_SPEED) / 2
+#define MAX_RIGHT_SPEED               1400                                        // Ideal Right Servo Max Speed to got straight
+#define MAX_LEFT_SPEED                1638                                        // Ideal Left Servo Max Speed to got straight
+#define MIN_SPEED                     1500                                        // Ideal Stop Servo Speed 
+#define MAX_DELTA_SPEED               (MAX_LEFT_SPEED - MAX_RIGHT_SPEED) / 2
 
 
 Servo ServoLeft;
 Servo ServoRight;
+int ServoRightSpeed = MIN_SPEED;                                        
+int ServoLeftSpeed = MIN_SPEED;
 
 void setup() {
-
-  int ServoRightSpeed = 1500;
-  int ServoLeftSpeed = 1500;
-  
+    
   ServoLeft.attach(12);
   ServoRight.attach(13);
 
@@ -40,10 +40,11 @@ void setup() {
     
     ServoLeft.writeMicroseconds(ServoLeftSpeed);
     ServoRight.writeMicroseconds(ServoRightSpeed);
-    delay(10);
+    delay(10);                                                                  // Apply the deltaSpeed for 10ms
   }
-  ServoLeft.writeMicroseconds(MAX_LEFT_SPEED);
-  ServoRight.writeMicroseconds(MAX_RIGHT_SPEED);
+  
+  ServoLeft.writeMicroseconds(MAX_LEFT_SPEED);                                  // Set Servo's to maximum speed   
+  ServoRight.writeMicroseconds(MAX_RIGHT_SPEED);                                // after acceleration is completed
 }
 
 void loop() {
