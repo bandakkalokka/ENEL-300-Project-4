@@ -5,11 +5,15 @@
 #define MIN_DELTA_SPEED               0
 #define ACCELERATION                  1
 
+
+
 int ServoRightSpeed = MIN_SPEED;
 int ServoLeftSpeed = MIN_SPEED;
 
-void StartDriving(){
-  
+
+
+void StartDriving()
+{  
   for(int deltaSpeed = 0; deltaSpeed < MAX_DELTA_SPEED; deltaSpeed += ACCELERATION) {
     ServoLeftSpeed = MIN_SPEED + deltaSpeed;
     ServoRightSpeed = MIN_SPEED - deltaSpeed;
@@ -23,7 +27,11 @@ void StartDriving(){
   ServoRight.writeMicroseconds(MAX_RIGHT_SPEED);                                  // after acceleration is completed
 }
 
-void StopDriving(){
+
+
+
+void StopDriving()
+{
   for(int deltaSpeed = MAX_DELTA_SPEED; deltaSpeed >= MIN_DELTA_SPEED; deltaSpeed -= ACCELERATION) {
     ServoLeftSpeed = MIN_SPEED + deltaSpeed;
     ServoRightSpeed = MIN_SPEED - deltaSpeed;

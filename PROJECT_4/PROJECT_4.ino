@@ -2,6 +2,13 @@
 
 #include <Servo.h>
 
+#define FRONT_IR_LED              2                   // Digital I/O pin for front led
+#define RIGHT_IR_LED              6                   // Digital I/O pin for right-side led
+#define FRONT_IR_SENSOR           10                  // Digital I/O pin for front sensor
+#define RIGHT_IR_SENSOR           4                   // Digital I/O pin for right sensor
+#define RIGHT_SERVO               13                  // Digital I/O pin for right servo
+#define LEFT_SERVO                12                  // Digital I/O pin for left servo
+
 Servo ServoRight, ServoLeft;
 int irFront, irSide;
 int counter=0;
@@ -9,12 +16,12 @@ int timespan;
 
 void setup()
 {
-  delay(1000);                               // Delay to finish tone
 
-  pinMode(10, INPUT);  pinMode(2, OUTPUT);   // IR LED & Receiver facing forwards
-  pinMode(4, INPUT); pinMode(6, OUTPUT);     // IR LED & Reciever facing right
-  ServoLeft.attach(12);                      
-  ServoRight.attach(13);
+  pinMode(FRONT_IR_SENSOR, INPUT);  pinMode(FRONT_IR_LED, OUTPUT);   // IR LED & Receiver facing forwards
+  pinMode(RIGHT_IR_SENSOR, INPUT);  pinMode(RIGHT_IR_LED, OUTPUT);     // IR LED & Reciever facing right
+  
+  ServoLeft.attach(LEFT_SERVO);                      
+  ServoRight.attach(RIGHT_SERVO);
   Serial.begin(9600);  
  
   StartDriving();
