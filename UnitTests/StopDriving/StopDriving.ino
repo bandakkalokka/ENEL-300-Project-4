@@ -4,7 +4,9 @@
  *  
  *  The purpose of the void StopDriving() function is to bring the 
  *  BoeBot to a standstill. Similar to the void StartDriving() function,
- *  a linear decelaration was implemented to provide a smooth stop.
+ *  a linear decelaration was implemented to provide a smooth stop. The
+ *  measured values from the CSV file were used to determine optimal stopping
+ *  pulse width and deceleration values.
  *  
  *  
  */
@@ -41,6 +43,9 @@ void setup() {
     ServoRight.writeMicroseconds(ServoRightSpeed);
     delay(10);                                                                    // Apply the deltaSpeed for 10ms
   }
+
+  ServoLeft.writeMicroseconds(MIN_SPEED);                                         // Set Servo's to stop after
+  ServoRight.writeMicroseconds(MIN_SPEED);                                        // deceleration is complete
 }
 
 void loop() {
