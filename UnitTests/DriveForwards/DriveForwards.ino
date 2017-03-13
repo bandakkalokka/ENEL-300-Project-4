@@ -22,6 +22,7 @@
 #define MAX_LEFT_SPEED                1638                                        // Ideal Left Servo Max Speed to got straight
 #define MIN_SPEED                     1500                                        // Ideal Stop Servo Speed 
 #define MAX_DELTA_SPEED               (MAX_LEFT_SPEED - MAX_RIGHT_SPEED) / 2
+#define ACCELERATION                  1
 
 
 Servo ServoLeft;
@@ -34,7 +35,7 @@ void setup() {
   ServoLeft.attach(12);
   ServoRight.attach(13);
 
-  for(int deltaSpeed = 0; deltaSpeed < MAX_DELTA_SPEED; deltaSpeed++) {
+  for(int deltaSpeed = 0; deltaSpeed < MAX_DELTA_SPEED; deltaSpeed += ACCELERATION) {
     ServoLeftSpeed = MIN_SPEED + deltaSpeed;
     ServoRightSpeed = MIN_SPEED - deltaSpeed;
     
