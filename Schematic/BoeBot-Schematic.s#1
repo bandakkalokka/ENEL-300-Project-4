@@ -113,7 +113,7 @@
 <layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
 <layer number="254" name="cooling" color="7" fill="1" visible="no" active="yes"/>
 </layers>
-<schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
+<schematic>
 <libraries>
 <library name="supply1">
 <packages>
@@ -21460,7 +21460,7 @@ Source: RS Component / Phycomp</description>
 <pinref part="ICSP" gate="A" pin="1"/>
 <pinref part="ZU4" gate="G$1" pin="(MISO)PB4"/>
 <pinref part="IOH" gate="A" pin="5"/>
-<wire x1="220.98" y1="83.82" x2="251.46" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="220.98" y1="83.82" x2="243.84" y2="83.82" width="0.1524" layer="91"/>
 <junction x="220.98" y="83.82"/>
 </segment>
 </net>
@@ -22016,6 +22016,16 @@ Source: RS Component / Phycomp</description>
 <pinref part="RN2" gate="A" pin="2"/>
 </segment>
 </net>
+</nets>
+</sheet>
+<sheet>
+<plain>
+</plain>
+<instances>
+</instances>
+<busses>
+</busses>
+<nets>
 </nets>
 </sheet>
 </sheets>
