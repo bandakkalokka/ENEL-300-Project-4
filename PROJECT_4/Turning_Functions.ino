@@ -15,3 +15,10 @@ void NinteyDegreeTurnR(){
   ServoLeft.writeMicroseconds(1500);
   delay (1000);
 }
+
+void NinteyDegreeTurn2(){
+  ServoRight.writeMicroseconds(1550);
+  delay (800);
+  ServoLeft.writeMicroseconds(1500);
+  delay (1000);
+}

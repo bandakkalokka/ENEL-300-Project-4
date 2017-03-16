@@ -26,9 +26,14 @@ void setup()
   NinteyDegreeTurnR();
   
   StartDriving();
-  Edge();
+  //exit(1);
+  //Edge();
+  delay(650);
   StopDriving();
-  exit(1);
+  NinteyDegreeTurn2();
+  
+  
+  
   
 }
 
