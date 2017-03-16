@@ -7,12 +7,12 @@ int CheckFrontSensor()
   
   if(irFront==0){  
     counter=0;                         
-    for(timespan=0; timespan<150; timespan++){
+    for(timespan=0; timespan<60; timespan++){
       
       if (irDetect(2,10,38000)==0){
       counter++;}
     
-      if(counter >= 150){ 
+      if(counter >= 60){ 
       StopDriving();
       return 0;}}
   }
@@ -42,6 +42,17 @@ while (1){
     delay(100);
 }
 
+void Edge()
+{
+  
+int count =0;
+while(1)
+{
+  if (irDetect(6,4,38000) == 0)
+      return; 
+}
+delay(100);
+}
 int irDetect(int irLedPin, int irReceiverPin, long frequency)
 {
   tone(irLedPin, frequency, 8);              // IRLED 38 kHz for at least 1 ms

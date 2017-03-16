@@ -26,15 +26,20 @@ void setup()
   NinteyDegreeTurnR();
   
   StartDriving();
+  Edge();
+  StopDriving();
+  exit(1);
   
 }
 
 void loop()
-{
+{ /*
   Serial.print (irDetect(6, 4, 38000));
   if (irDetect(6, 4, 38000)==0){
     FollowSideSensor();
     exit(1);
-  }}
+  }
+  */
+  }
   
 
