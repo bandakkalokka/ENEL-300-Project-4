@@ -22,15 +22,24 @@ void setup()
   CheckFrontSensor();
   NinetyDegreeTurn();
   StartDriving();
-  FollowSideSensor();
+  FollowSideSensor(300);
   NinteyDegreeTurnR();
   
   StartDriving();
   //exit(1);
   //Edge();
-  delay(650);
-  StopDriving();
-  NinteyDegreeTurn2();
+  //delay(650);
+  FollowSideSensor(100);
+  //StopDriving();
+  if(irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000)) {
+    NinteyDegreeTurn2();
+  }
+  else {
+    FollowSideSensor(60);
+    NinteyDegreeTurn2();
+  }
+  //NinteyDegreeTurn2();
+  //StopDriving();
   
   
   

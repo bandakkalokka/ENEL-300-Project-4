@@ -1,40 +1,40 @@
 int CheckFrontSensor()
 {
   while (1){
-  irFront=irDetect(2, 10, 38000);       
+  irFront=irDetect(FRONT_IR_LED, FRONT_IR_SENSOR, 38000);       
   Serial.println("Front:"); 
   Serial.println(irFront);                    
   
   if(irFront==0){  
     counter=0;                         
-    for(timespan=0; timespan<60; timespan++){
+    for(timespan=0; timespan<70; timespan++){
       
       if (irDetect(2,10,38000)==0){
       counter++;}
     
-      if(counter >= 60){ 
+      if(counter >= 70){ 
       StopDriving();
       return 0;}}
   }
     delay(100);}             
  }   
 
-void FollowSideSensor()
+void FollowSideSensor(int pause)
 {
 while (1){
-  irSide=irDetect(6, 4, 38000);
+  irSide=irDetect(FRONT_IR_LED, FRONT_IR_SENSOR, 38000);
   Serial.println("Side:");
   Serial.println(irSide); 
   
   if(irSide==1){
     counter=0;                           
-    for(timespan=0; timespan<20; timespan++){
+    for(timespan=0; timespan<10; timespan++){
     
       if (irDetect(6,4,38000)==1){
       counter++;}
     
       if(counter >= 10){ 
-      delay(300);
+      delay(pause);
       StopDriving();
       return;}}
   }
