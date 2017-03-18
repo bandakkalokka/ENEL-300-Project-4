@@ -31,12 +31,21 @@ void setup()
   //delay(650);
   FollowSideSensor(100);
   //StopDriving();
-  if(irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000)) {
-    NinteyDegreeTurn2();
+  
+  if(irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000)) {    //cup far
+     NinteyDegreeTurn2();
+     //StartDriving();      Takes too long
+     ServoLeft.writeMicroseconds(1700);
+     ServoRight.writeMicroseconds(1300);
+     CheckFrontSensor();
+     NinteyDegreeTurnR();
+     Reverse();
+     NinteyDegreeTurn();
   }
-  else {
+  else {                                                  //cup close
     FollowSideSensor(60);
     NinteyDegreeTurn2();
+    StartDriving();
   }
   //NinteyDegreeTurn2();
   //StopDriving();
