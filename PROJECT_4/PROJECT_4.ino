@@ -37,10 +37,10 @@ void setup()
      //StartDriving();      Takes too long
      ServoLeft.writeMicroseconds(1700);
      ServoRight.writeMicroseconds(1300);
-     CheckFrontSensor();
+     CheckFrontCup();
      NinteyDegreeTurnR();
      Reverse();
-     NinteyDegreeTurn();
+     NinetyDegreeTurnL();
   }
   else {                                                  //cup close
     FollowSideSensor(60);

@@ -53,6 +53,7 @@ while(1)
 }
 delay(100);
 }
+
 int irDetect(int irLedPin, int irReceiverPin, long frequency)
 {
   tone(irLedPin, frequency, 8);              // IRLED 38 kHz for at least 1 ms
@@ -61,5 +62,26 @@ int irDetect(int irLedPin, int irReceiverPin, long frequency)
   delay(1);                                  // Down time before recheck
   return ir;                                 // Return 1 no detect, 0 detect
   }  
+
+int CheckFrontCup()
+{
+  while (1){
+  irFront=irDetect(FRONT_IR_LED, FRONT_IR_SENSOR, 38000);       
+  Serial.println("Front:"); 
+  Serial.println(irFront);                    
+  
+  if(irFront==0){  
+    counter=0;                         
+    for(timespan=0; timespan<140; timespan++){
+      
+      if (irDetect(2,10,38000)==0){
+      counter++;}
+    
+      if(counter >= 140){ 
+      StopImmediate();
+      return 0;}}
+  }
+    delay(100);}             
+ }
 
 
