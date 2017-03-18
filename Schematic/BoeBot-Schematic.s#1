@@ -21291,16 +21291,16 @@ Source: RS Component / Phycomp</description>
 <pinref part="GND15" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="VDD"/>
-<pinref part="GND24" gate="1" pin="GND"/>
-<wire x1="378.46" y1="152.4" x2="363.22" y2="152.4" width="0.1524" layer="91"/>
-<wire x1="363.22" y1="152.4" x2="363.22" y2="127" width="0.1524" layer="91"/>
+<pinref part="U$3" gate="G$1" pin="GND"/>
+<pinref part="GND6" gate="1" pin="GND"/>
+<wire x1="381.542759375" y1="45.678553125" x2="365.76" y2="45.678553125" width="0.1524" layer="91"/>
+<wire x1="365.76" y1="45.678553125" x2="365.76" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="VDD"/>
-<pinref part="GND6" gate="1" pin="GND"/>
-<wire x1="381.542759375" y1="53.298553125" x2="365.76" y2="53.298553125" width="0.1524" layer="91"/>
-<wire x1="365.76" y1="53.298553125" x2="365.76" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="GND"/>
+<pinref part="GND24" gate="1" pin="GND"/>
+<wire x1="378.46" y1="144.78" x2="363.22" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="363.22" y1="144.78" x2="363.22" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="AREF" class="4">

@@ -20648,9 +20648,9 @@ Source: RS Component / Phycomp</description>
 <devices>
 <device name="" package="IR_LED">
 <connects>
-<connect gate="G$1" pin="CONTROL" pad="VDD"/>
-<connect gate="G$1" pin="GND" pad="CONTROL"/>
-<connect gate="G$1" pin="VDD" pad="GND"/>
+<connect gate="G$1" pin="CONTROL" pad="CONTROL"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="VDD" pad="VDD"/>
 </connects>
 <technologies>
 <technology name=""/>
