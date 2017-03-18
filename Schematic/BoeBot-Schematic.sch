@@ -63,6 +63,7 @@
 <layer number="53" name="tGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
+<layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
@@ -20615,6 +20616,50 @@ Source: RS Component / Phycomp</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="Servo">
+<packages>
+<package name="IR_LED">
+<pad name="VDD" x="0" y="3.81" drill="0.8" shape="square"/>
+<pad name="GND" x="0" y="-3.81" drill="0.8" shape="square"/>
+<pad name="CONTROL" x="0" y="0" drill="0.8" shape="square"/>
+</package>
+</packages>
+<symbols>
+<symbol name="IR_LED">
+<wire x1="-15.24" y1="15.24" x2="15.24" y2="15.24" width="0.254" layer="94"/>
+<wire x1="15.24" y1="15.24" x2="15.24" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-15.24" x2="-15.24" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="-15.24" y1="-15.24" x2="-15.24" y2="15.24" width="0.254" layer="94"/>
+<circle x="10.16" y="0" radius="3.5921" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-5.08" x2="10.16" y2="5.08" width="0.254" layer="94" curve="-180"/>
+<wire x1="10.16" y1="5.08" x2="27.94" y2="2.54" width="0.254" layer="94"/>
+<wire x1="27.94" y1="2.54" x2="27.94" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="27.94" y1="-2.54" x2="10.16" y2="-5.08" width="0.254" layer="94"/>
+<pin name="VDD" x="-20.32" y="0" length="middle"/>
+<pin name="CONTROL" x="-20.32" y="7.62" length="middle"/>
+<pin name="GND" x="-20.32" y="-7.62" length="middle"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="IR_LED">
+<gates>
+<gate name="G$1" symbol="IR_LED" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="IR_LED">
+<connects>
+<connect gate="G$1" pin="CONTROL" pad="CONTROL"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="VDD" pad="VDD"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -20724,6 +20769,10 @@ Source: RS Component / Phycomp</description>
 <part name="D3" library="diode" deviceset="DIODE-" device="MINIMELF" value="CD1206-S01575"/>
 <part name="Y1" library="SmartPrj" deviceset="XTAL/S" device="" value="16MHz"/>
 <part name="U$1" library="SmartPrj" deviceset="DISCLAIMER" device=""/>
+<part name="U$2" library="Servo" deviceset="IR_LED" device=""/>
+<part name="U$3" library="Servo" deviceset="IR_LED" device=""/>
+<part name="GND6" library="supply1" deviceset="GND" device=""/>
+<part name="GND24" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -20747,12 +20796,10 @@ Source: RS Component / Phycomp</description>
 <text x="226.06" y="93.98" size="1.778" layer="91">SDA</text>
 <text x="226.06" y="96.52" size="1.778" layer="91">SCL</text>
 <text x="-83.82" y="-50.8" size="5.08" layer="91">Use of the ARDUINO name must be compliant with http://www.arduino.cc/en/Main/Policy</text>
-<wire x1="-116.84" y1="198.12" x2="-116.84" y2="195.58" width="2.54" layer="94"/>
-<wire x1="-116.84" y1="195.58" x2="-116.84" y2="5.08" width="2.54" layer="94"/>
+<wire x1="-116.84" y1="208.28" x2="-116.84" y2="5.08" width="2.54" layer="94"/>
 <wire x1="-116.84" y1="5.08" x2="274.32" y2="5.08" width="2.54" layer="94"/>
 <wire x1="274.32" y1="5.08" x2="274.32" y2="208.28" width="2.54" layer="94"/>
 <wire x1="274.32" y1="208.28" x2="-116.84" y2="208.28" width="2.54" layer="94"/>
-<wire x1="-116.84" y1="208.28" x2="-116.84" y2="198.12" width="2.54" layer="94"/>
 </plain>
 <instances>
 <instance part="ZU4" gate="G$1" x="157.48" y="53.34"/>
@@ -20945,6 +20992,10 @@ Source: RS Component / Phycomp</description>
 </instance>
 <instance part="Y1" gate="G$1" x="2.54" y="73.66" rot="R270"/>
 <instance part="U$1" gate="G$1" x="-83.82" y="-43.18"/>
+<instance part="U$2" gate="G$1" x="398.78" y="152.4"/>
+<instance part="U$3" gate="G$1" x="401.862759375" y="53.298553125"/>
+<instance part="GND6" gate="1" x="365.76" y="27.94"/>
+<instance part="GND24" gate="1" x="363.22" y="124.46"/>
 </instances>
 <busses>
 </busses>
@@ -21239,6 +21290,18 @@ Source: RS Component / Phycomp</description>
 <pinref part="RN2" gate="D" pin="2"/>
 <pinref part="GND15" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="GND"/>
+<pinref part="GND6" gate="1" pin="GND"/>
+<wire x1="381.542759375" y1="45.678553125" x2="365.76" y2="45.678553125" width="0.1524" layer="91"/>
+<wire x1="365.76" y1="45.678553125" x2="365.76" y2="30.48" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="GND"/>
+<pinref part="GND24" gate="1" pin="GND"/>
+<wire x1="378.46" y1="144.78" x2="363.22" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="363.22" y1="144.78" x2="363.22" y2="127" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="AREF" class="4">
 <segment>
@@ -21360,6 +21423,11 @@ Source: RS Component / Phycomp</description>
 <pinref part="IOH" gate="A" pin="6"/>
 <pinref part="ICSP" gate="A" pin="3"/>
 <pinref part="ZU4" gate="G$1" pin="(SCK)PB5"/>
+<wire x1="220.98" y1="86.36" x2="342.9" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="342.9" y1="86.36" x2="342.9" y2="160.02" width="0.1524" layer="91"/>
+<junction x="220.98" y="86.36"/>
+<pinref part="U$2" gate="G$1" pin="CONTROL"/>
+<wire x1="342.9" y1="160.02" x2="378.46" y2="160.02" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="76.2" y1="172.72" x2="63.5" y2="172.72" width="0.1524" layer="91"/>
@@ -21460,7 +21528,10 @@ Source: RS Component / Phycomp</description>
 <pinref part="ICSP" gate="A" pin="1"/>
 <pinref part="ZU4" gate="G$1" pin="(MISO)PB4"/>
 <pinref part="IOH" gate="A" pin="5"/>
-<wire x1="220.98" y1="83.82" x2="251.46" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="U$3" gate="G$1" pin="CONTROL"/>
+<wire x1="381.542759375" y1="60.918553125" x2="342.9" y2="60.918553125" width="0.1524" layer="91"/>
+<wire x1="342.9" y1="60.918553125" x2="342.9" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="342.9" y1="83.82" x2="220.98" y2="83.82" width="0.1524" layer="91"/>
 <junction x="220.98" y="83.82"/>
 </segment>
 </net>
