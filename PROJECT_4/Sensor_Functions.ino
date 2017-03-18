@@ -9,7 +9,7 @@ int CheckFrontSensor()
     counter=0;                         
     for(timespan=0; timespan<70; timespan++){
       
-      if (irDetect(2,10,38000)==0){
+      if (irDetect(FRONT_IR_LED,FRONT_IR_SENSOR,38000)==0){
       counter++;}
     
       if(counter >= 70){ 
@@ -19,7 +19,7 @@ int CheckFrontSensor()
     delay(100);}             
  }   
 
-void FollowSideSensor(int pause)
+void FollowSideSensor(int pause, int State)
 {
 while (1){
   irSide=irDetect(FRONT_IR_LED, FRONT_IR_SENSOR, 38000);
@@ -35,7 +35,10 @@ while (1){
     
       if(counter >= 10){ 
       delay(pause);
-      StopDriving();
+      if(State ==1)
+        StopDriving();
+      else if(State == 2)
+        StopImmediate();
       return;}}
   }
 }
@@ -74,7 +77,7 @@ int CheckFrontCup()
     counter=0;                         
     for(timespan=0; timespan<140; timespan++){
       
-      if (irDetect(2,10,38000)==0){
+      if (irDetect(2,5,38000)==0){
       counter++;}
     
       if(counter >= 140){ 
@@ -83,5 +86,27 @@ int CheckFrontCup()
   }
     delay(100);}             
  }
+
+
+int CheckRightSensor()
+{
+  while (1){
+  irFront=irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000);       
+  Serial.println("Front:"); 
+  Serial.println(irFront);                    
+  
+  if(irFront==0){  
+    counter=0;                         
+    for(timespan=0; timespan<70; timespan++){
+      
+      if (irDetect(2,5,38000)==0){
+      counter++;}
+    
+      if(counter >= 70){ 
+      //StopImmediate();
+      return 0;}}
+  }
+    delay(100);}             
+ }   
 
 

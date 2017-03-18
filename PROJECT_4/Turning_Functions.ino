@@ -27,8 +27,7 @@ void NinteyDegreeTurn2(){
 void NinetyDegreeTurnL() {
   ServoLeft.writeMicroseconds(1500);
   ServoRight.writeMicroseconds(1300);
-  delay(1200);
-  exit(1);
+  delay(1390);
 }
 
 
