@@ -9,7 +9,7 @@ int CheckFrontSensor()
     counter=0;                         
     for(timespan=0; timespan<70; timespan++){
       
-      if (irDetect(2,10,38000)==0){
+      if (irDetect(FRONT_IR_LED,FRONT_IR_SENSOR,38000)==0){
       counter++;}
     
       if(counter >= 70){ 
@@ -74,7 +74,7 @@ int CheckFrontCup()
     counter=0;                         
     for(timespan=0; timespan<140; timespan++){
       
-      if (irDetect(2,10,38000)==0){
+      if (irDetect(FRONT_IR_LED, FRONT_IR_SENSOR,38000)==0){
       counter++;}
     
       if(counter >= 140){ 
