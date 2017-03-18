@@ -18,7 +18,8 @@
 #define RIGHT_IR_SENSOR           4                   				  // Digital I/O pin for right sensor
 #define RIGHT_SERVO               13                  			          // Digital I/O pin for right servo
 #define LEFT_SERVO                12                  				  // Digital I/O pin for left servo
-#define BUZZER_LED		  10					          // Digital I/O pin for buzzer and led
+#define BUZZER            	  10					          // Digital I/O pin for buzzer 
+#define LED			  7						  // Digital I/O pin for LED
 
 /*----------------------------------------*/
 /*	SERVO CONTROL SPECIFICATIONS	  */

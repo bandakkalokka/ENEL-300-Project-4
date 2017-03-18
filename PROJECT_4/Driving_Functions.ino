@@ -46,3 +46,8 @@ void StopImmediate() {
   ServoRight.writeMicroseconds(1500);
 }
 
+void StartImmediate(){
+  ServoLeft.writeMicroseconds(1700);
+     ServoRight.writeMicroseconds(1300);
+}
+

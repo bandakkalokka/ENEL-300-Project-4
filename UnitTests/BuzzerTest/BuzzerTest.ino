@@ -1,9 +1,13 @@
 #define BUZZER  10
-
+#define LED 7
 
 
 void setup() {
-  pinMode(BUZZER, INPUT);
+  pinMode(BUZZER, OUTPUT);
+  pinMode(LED, OUTPUT);
+  digitalWrite(LED, HIGH);
+  delay(500);
+  digitalWrite(LED,LOW);
   tone(BUZZER, 5000, 500);
 }
 

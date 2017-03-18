@@ -13,56 +13,75 @@ void setup()
 
   pinMode(FRONT_IR_SENSOR, INPUT);  pinMode(FRONT_IR_LED, OUTPUT);   // IR LED & Receiver facing forwards
   pinMode(RIGHT_IR_SENSOR, INPUT);  pinMode(RIGHT_IR_LED, OUTPUT);     // IR LED & Reciever facing right
+  pinMode(BUZZER, OUTPUT);          pinMode(LED, OUTPUT);            // Buzzer and LED initialization
   
   ServoLeft.attach(LEFT_SERVO);                      
   ServoRight.attach(RIGHT_SERVO);
   Serial.begin(9600);  
 
-  
+  //FindBoard
   StartDriving();
   CheckFrontSensor();
   NinetyDegreeTurn();
+
+  //FollowBoard
   StartDriving();
   FollowSideSensor(300, 1);
   NinteyDegreeTurnR();
-  
+
+  //AcrossSideBoard
   StartDriving();
-  //Edge();
-  //delay(650);
   CheckRightSensor();
-  FollowSideSensor(0, 2);
+  FollowSideSensor(0, 2); 
+
+  //FindBoulder
+  StartDriving();
+  CheckRightSensor(); //bridgethegap
+  StopImmediate();
+  NinteyDegreeTurn2();
+  StartImmediate();
+  CheckFrontCup();
+  NinteyDegreeTurnR();
+  Reverse();
+  NinetyDegreeTurnL();
   
-  if(irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000)) {    //cup far
-     NinteyDegreeTurn2();
-     ServoLeft.writeMicroseconds(1700);
-     ServoRight.writeMicroseconds(1300);
-     CheckFrontCup();
-     NinteyDegreeTurnR();
-     Reverse();
-     NinetyDegreeTurnL();
-  }
-  else {                                                  //cup close
-    FollowSideSensor(60, 2);
-    NinteyDegreeTurn2();
-    StartDriving();
-  }
+
+  //if(irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000)) {    //cup far
+     
+     
+   
+    
+  //}
+  
+ // else 
+//  {                                                  //cup close
+//    FollowSideSensor(60, 2);
+//    NinteyDegreeTurn2();
+//    StartDriving();
+//  }
 
   StartDriving();
-  if(!irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000)) {
-    FollowSideSensor(500, 1);
+  while(1) {
+    digitalWrite(LED, HIGH);
+    delay(200);
+    digitalWrite(LED,LOW);
+    Serial.println(CheckRightSensor());
+    if(!CheckRightSensor()) {
+      FollowSideSensor(500, 1);
+      break;
+    }
   }
   
   NinteyDegreeTurnR();
   StartDriving();
-  delay(90);
+  //delay(90);
   CheckFrontSensor();
-  NinetyDegreeTurn();
+  NinetyDegreeTurn3();
   StartDriving();
-  CheckFrontSensor();
-//  Beep();
+  CheckFrontCup();
+  Beep();
   //NinteyDegreeTurn2();
   //StopDriving();
-  
   
   
   
