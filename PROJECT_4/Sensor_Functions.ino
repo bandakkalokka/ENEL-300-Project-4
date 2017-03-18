@@ -99,7 +99,7 @@ int CheckRightSensor()
     counter=0;                         
     for(timespan=0; timespan<70; timespan++){
       
-      if (irDetect(2,5,38000)==0){
+      if (irDetect(6,4,38000)==0){
       counter++;}
     
       if(counter >= 70){ 

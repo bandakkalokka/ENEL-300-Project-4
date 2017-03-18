@@ -18,8 +18,8 @@ void setup()
   ServoRight.attach(RIGHT_SERVO);
   Serial.begin(9600);  
 
-  tone(6, 1, 10000);
-  //StartDriving();
+  
+  StartDriving();
   CheckFrontSensor();
   NinetyDegreeTurn();
   StartDriving();
@@ -51,6 +51,7 @@ void setup()
   if(!irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000)) {
     FollowSideSensor(500, 1);
   }
+  
   NinteyDegreeTurnR();
   StartDriving();
   delay(90);
