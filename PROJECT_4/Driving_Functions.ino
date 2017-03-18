@@ -33,12 +33,12 @@ void StopDriving()
   ServoLeft.writeMicroseconds(MIN_SPEED);                                         // Set Servo's to stop after
   ServoRight.writeMicroseconds(MIN_SPEED);                                        // deceleration is complete
 }
-  
+
 
 void Reverse() {
   ServoLeft.writeMicroseconds(1400);
   ServoRight.writeMicroseconds(1639);
-  delay(1500);
+  delay(850);
 }
 
 void StopImmediate() {

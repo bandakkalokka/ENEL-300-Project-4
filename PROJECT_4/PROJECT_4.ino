@@ -17,23 +17,24 @@ void setup()
   ServoLeft.attach(LEFT_SERVO);                      
   ServoRight.attach(RIGHT_SERVO);
   Serial.begin(9600);  
-
-  tone(6, 1, 10000);
-  //StartDriving();
+ 
+  StartDriving();
   CheckFrontSensor();
   NinetyDegreeTurn();
   StartDriving();
-  FollowSideSensor(300, 1);
+  FollowSideSensor(300);
   NinteyDegreeTurnR();
   
   StartDriving();
+  //exit(1);
   //Edge();
   //delay(650);
-  CheckRightSensor();
-  FollowSideSensor(0, 2);
+  FollowSideSensor(100);
+  //StopDriving();
   
   if(irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000)) {    //cup far
      NinteyDegreeTurn2();
+     //StartDriving();      Takes too long
      ServoLeft.writeMicroseconds(1700);
      ServoRight.writeMicroseconds(1300);
      CheckFrontCup();
@@ -42,23 +43,10 @@ void setup()
      NinetyDegreeTurnL();
   }
   else {                                                  //cup close
-    FollowSideSensor(60, 2);
+    FollowSideSensor(60);
     NinteyDegreeTurn2();
     StartDriving();
   }
-
-  StartDriving();
-  if(!irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000)) {
-    FollowSideSensor(500, 1);
-  }
-  NinteyDegreeTurnR();
-  StartDriving();
-  delay(90);
-  CheckFrontSensor();
-  NinetyDegreeTurn();
-  StartDriving();
-  CheckFrontSensor();
-//  Beep();
   //NinteyDegreeTurn2();
   //StopDriving();
   
