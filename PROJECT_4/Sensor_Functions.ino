@@ -1,9 +1,7 @@
 int CheckFrontSensor()
 {
   while (1){
-  irFront=irDetect(FRONT_IR_LED, FRONT_IR_SENSOR, 38000);       
-  //Serial.println("Front:");  
-  //Serial.println(irFront);                    
+  irFront=irDetect(FRONT_IR_LED, FRONT_IR_SENSOR, 38000);                           
   
   if(irFront==0){  
     counter=0;                         
@@ -23,8 +21,6 @@ void FollowSideSensor(int pause, int State)
 {
 while (1){
   irSide=irDetect(FRONT_IR_LED, FRONT_IR_SENSOR, 38000);
-  //Serial.println("Side:");
-  //Serial.println(irSide); 
   
   if(irSide==1){
     counter=0;                           
@@ -91,15 +87,13 @@ int CheckFrontCup()
 int CheckRightSensor()
 {
   while (1){
-  irFront=irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000);       
-  Serial.println("Front:"); 
-  Serial.println(irFront);                    
+  irFront=irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000);                          
   
   if(irFront==0){  
     counter=0;                         
     for(timespan=0; timespan<30; timespan++){
       
-      if (irDetect(6,4,38000)==0){
+      if (irDetect(RIGHT_IR_LED,RIGHT_IR_SENSOR,38000)==0){       // if object detected, increase counter
       counter++;}
     
       if(counter >= 30){ 
