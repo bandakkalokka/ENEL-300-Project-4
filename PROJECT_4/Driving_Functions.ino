@@ -1,7 +1,6 @@
 int ServoRightSpeed = MIN_SPEED;
 int ServoLeftSpeed = MIN_SPEED;
 
-
 void StartDriving()
 {  
   for(int deltaSpeed = 0; deltaSpeed < MAX_DELTA_SPEED; deltaSpeed += ACCELERATION) {
@@ -16,8 +15,6 @@ void StartDriving()
   ServoLeft.writeMicroseconds(MAX_LEFT_SPEED);                                    // Set Servo's to maximum speed 
   ServoRight.writeMicroseconds(MAX_RIGHT_SPEED);                                  // after acceleration is completed
 }
-
-
 
 void StopDriving()
 {
@@ -34,11 +31,10 @@ void StopDriving()
   ServoRight.writeMicroseconds(MIN_SPEED);                                        // deceleration is complete
 }
   
-
 void Reverse() {
   ServoLeft.writeMicroseconds(1400);
   ServoRight.writeMicroseconds(1639);
-  delay(1500);
+  delay(1200);
 }
 
 void StopImmediate() {
@@ -48,6 +44,6 @@ void StopImmediate() {
 
 void StartImmediate(){
   ServoLeft.writeMicroseconds(1700);
-     ServoRight.writeMicroseconds(1300);
+  ServoRight.writeMicroseconds(1300);
 }
 

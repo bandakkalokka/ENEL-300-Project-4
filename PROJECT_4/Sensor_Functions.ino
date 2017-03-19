@@ -1,3 +1,7 @@
+int irFront, irRight;
+int counter=0;
+int timespan;
+
 int CheckFrontSensor()
 {
   while (1){
@@ -5,35 +9,35 @@ int CheckFrontSensor()
   
   if(irFront==0){  
     counter=0;                         
-    for(timespan=0; timespan<60; timespan++){
+    for(timespan=0; timespan<30; timespan++){
       
       if (irDetect(FRONT_IR_LED,FRONT_IR_SENSOR,38000)==0){
       counter++;}
     
-      if(counter >= 60){ 
+      if(counter >= 30){ 
       StopDriving();
       return 0;}}
   }
     delay(100);}             
  }   
 
-void FollowSideSensor(int pause, int State)
+void FollowRightSensor(int pause, int stopdriving)
 {
 while (1){
-  irSide=irDetect(FRONT_IR_LED, FRONT_IR_SENSOR, 38000);
+  irRight=irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000);
   
-  if(irSide==1){
+  if(irRight==1){
     counter=0;                           
     for(timespan=0; timespan<10; timespan++){
     
-      if (irDetect(6,4,38000)==1){
+      if (irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR,38000)==1){
       counter++;}
     
       if(counter >= 10){ 
       delay(pause);
-      if(State ==1)
+      if(stopdriving ==1)
         StopDriving();
-      else if(State == 2)
+      else if(stopdriving == 2)
         StopImmediate();
       return;}}
   }
@@ -71,12 +75,12 @@ int CheckFrontCup()
   
   if(irFront==0){  
     counter=0;                         
-    for(timespan=0; timespan<30; timespan++){
+    for(timespan=0; timespan<50; timespan++){
       
       if (irDetect(2,5,38000)==0){
       counter++;}
     
-      if(counter >= 30){ 
+      if(counter >= 50){ 
       StopImmediate();
       return 0;}}
   }
@@ -87,9 +91,9 @@ int CheckFrontCup()
 int CheckRightSensor()
 {
   while (1){
-  irFront=irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000);                          
-  
-  if(irFront==0){  
+  irRight=irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000);                          
+  Serial.println(irFront);
+  if(irRight==0){  
     counter=0;                         
     for(timespan=0; timespan<30; timespan++){
       

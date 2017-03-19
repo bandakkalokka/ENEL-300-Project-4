@@ -4,9 +4,6 @@
 #include "BoeBot.h"
 
 Servo ServoRight, ServoLeft;
-int irFront, irSide;
-int counter=0;
-int timespan;
 
 void setup()
 {
@@ -22,36 +19,87 @@ void setup()
   //FindBoard
   StartDriving();
   CheckFrontSensor();
-  NinetyDegreeTurn();
+  ReachBoardTurn(); //first turn at board
 
   //FollowBoard
   StartDriving();
-  FollowSideSensor(300, 1);
-  NinteyDegreeTurnR();
+  FollowRightSensor(300, 1);
+  AroundBoardTurn(); //second turn at the end of board
 
   //AcrossSideBoard
   StartDriving();
-  CheckRightSensor();
-  FollowSideSensor(0, 2); 
+  CheckRightSensor(); //find the beginning board 
+  FollowRightSensor(0, 2); //drive till end of board (FollowSideSensor calls StopDriving)
+  StartDriving();
+  StopImmediate();      //bridge the gap (hard coded)
 
   //FindBoulder
+  AroundBoardTurn(); //turn to face the boulder 
+  if (irDetect(FRONT_IR_LED, FRONT_IR_SENSOR, 38000)==1){
   StartDriving();
-  CheckRightSensor(); //bridgethegap
-  StopImmediate();
-  NinteyDegreeTurn2();
+  CheckFrontCup();}
+
+  //NavigateBoulder
+  FaceBoardTurn();
+  delay(100);
+  //StartImmediate();
+  //CheckFrontCup();
+  //AroundBoardTurn();
+  Reverse();
+  TurnLeft();
+  StartDriving();
+  FollowRightSensor(600, 1);
+  AroundBoardTurn();
+  StartImmediate();
+  //delay(90);
+  CheckFrontSensor();
+  ReverseFaceCup(); //face the middle cup
+
+  //FindMiddleCup
   StartImmediate();
   CheckFrontCup();
-  NinteyDegreeTurnR();
+  Beep();
+
+  //NavigateBoulder
+  FaceBoardTurn();
+  delay(100);
+  //StartImmediate();
+  //CheckFrontCup();
+  //AroundBoardTurn();
   Reverse();
-  NinetyDegreeTurnL();
+  TurnLeft();
+  StartDriving();
+  FollowRightSensor(650, 1);
+  AroundBoardTurn();
+  StartImmediate();
+  //delay(90);
+  CheckFrontSensor();
+  ReverseFaceCup(); //face the end cup
+
+  //FindBoulder
+  StartImmediate();
+  CheckFrontCup();
+
+  //NavigateBoulder
+  FaceBoardTurn();
+  delay(100);
+  //StartImmediate();
+  //CheckFrontCup();
+  //AroundBoardTurn();
+  Reverse();
+  TurnLeft();
+  StartDriving();
+  FollowRightSensor(500, 1);
+
+  //NavigateEndofBoard
+  AroundBoardTurn();
+  StartDriving();
+  CheckRightSensor(); //find the beginning board 
+  FollowRightSensor(0, 2); //drive till end of board (FollowSideSensor calls StopDriving)
+
   
 
-  //if(irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000)) {    //cup far
-     
-     
-   
-    
-  //}
+  
   
  // else 
 //  {                                                  //cup close
@@ -60,26 +108,29 @@ void setup()
 //    StartDriving();
 //  }
 
-  StartDriving();
-  while(1) {
-    digitalWrite(LED, HIGH);
-    delay(200);
-    digitalWrite(LED,LOW);
-    Serial.println(CheckRightSensor());
-    if(!CheckRightSensor()) {
-      FollowSideSensor(500, 1);
-      break;
-    }
-  }
+  //StartDriving();
+  //while(1) {
+//    digitalWrite(LED, HIGH);
+//    delay(200);
+//    digitalWrite(LED,LOW);
+//    Serial.println(CheckRightSensor());
+//    if(!CheckRightSensor()) {
+//      FollowRightSensor(500, 1);
+//      break;
+//    }
+//  }
+
   
-  NinteyDegreeTurnR();
-  StartDriving();
-  //delay(90);
-  CheckFrontSensor();
-  NinetyDegreeTurn3();
-  StartDriving();
-  CheckFrontCup();
-  Beep();
+//  AroundBoardTurn();
+//  StartDriving();
+//  //delay(90);
+//  CheckFrontSensor();
+//  ReverseFaceCup();
+//  StartImmediate();
+//  CheckFrontCup();
+//  Beep();
+
+  
   //NinteyDegreeTurn2();
   //StopDriving();
   
@@ -95,6 +146,34 @@ void loop()
     exit(1);
   }
   */
+
+  /*
+   * 
+   *  FIND_BOARD   0
+   *  FOLLOW_BOARD 1
+   *  
+   * 
+   *  int irfront = check front
+   *  int irRight = check right
+   *  
+   *  switch(state):
+   *  
+   *  case FIND_BOARD:
+   *    if(!irfront)
+   *      turn left
+   *      state = FOLLOW_BOARD
+   *    break;
+   *    
+   * case FOLLOWW_BOARD:
+   *    if(irRight)
+   *      turn right
+   *    break;
+   * 
+   * case PASS_BOARD_WIDTH:
+   *    if(!irRight)
+   *      
+   */
+  
   }
   
 
