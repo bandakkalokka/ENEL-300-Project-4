@@ -18,7 +18,7 @@ void setup()
 
   //FindBoard
   StartDriving();
-  CheckFrontSensor();
+  CheckFrontSensor(30, 1);
   ReachBoardTurn(); //first turn at board
 
   //FollowBoard
@@ -48,11 +48,12 @@ void setup()
   Reverse();
   TurnLeft();
   StartDriving();
-  FollowRightSensor(600, 1);
+  CheckRightSensor();
+  FollowRightSensor(650, 1);
   AroundBoardTurn();
   StartImmediate();
   //delay(90);
-  CheckFrontSensor();
+  CheckFrontSensor(180, 2);
   ReverseFaceCup(); //face the middle cup
 
   //FindMiddleCup
@@ -68,12 +69,13 @@ void setup()
   //AroundBoardTurn();
   Reverse();
   TurnLeft();
-  StartDriving();
+  StartImmediate();
+  CheckRightSensor();
   FollowRightSensor(650, 1);
   AroundBoardTurn();
   StartImmediate();
   //delay(90);
-  CheckFrontSensor();
+  CheckFrontSensor(180, 2);
   ReverseFaceCup(); //face the end cup
 
   //FindBoulder
@@ -89,13 +91,18 @@ void setup()
   Reverse();
   TurnLeft();
   StartDriving();
-  FollowRightSensor(500, 1);
+  FollowRightSensor(900, 1);
 
   //NavigateEndofBoard
   AroundBoardTurn();
   StartDriving();
   CheckRightSensor(); //find the beginning board 
-  FollowRightSensor(0, 2); //drive till end of board (FollowSideSensor calls StopDriving)
+  FollowRightSensor(850, 2); //drive till end of board (FollowSideSensor calls StopDriving)
+  AroundBoardTurn();
+
+  //BacktoOriginal
+  StartDriving();
+  
 
   
 

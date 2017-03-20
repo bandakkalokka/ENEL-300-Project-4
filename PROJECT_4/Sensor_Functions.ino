@@ -2,23 +2,27 @@ int irFront, irRight;
 int counter=0;
 int timespan;
 
-int CheckFrontSensor()
+int CheckFrontSensor(int distance, int stopper)
 {
   while (1){
   irFront=irDetect(FRONT_IR_LED, FRONT_IR_SENSOR, 38000);                           
   
   if(irFront==0){  
     counter=0;                         
-    for(timespan=0; timespan<30; timespan++){
+    for(timespan=0; timespan<distance; timespan++){
       
       if (irDetect(FRONT_IR_LED,FRONT_IR_SENSOR,38000)==0){
       counter++;}
     
-      if(counter >= 30){ 
-      StopDriving();
+      if(counter >= distance){
+        if(stopper == 1)  
+          StopDriving();
+      else if(stopper == 2) {
+          StopImmediate();
+      }
       return 0;}}
   }
-    delay(100);}             
+    delay(50);}             
  }   
 
 void FollowRightSensor(int pause, int stopdriving)
