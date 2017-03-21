@@ -4,6 +4,8 @@
 #include "BoeBot.h"
 
 Servo ServoRight, ServoLeft;
+int pacetime= 10000;
+int starttime, elaspedtime;
 
 void setup()
 {
@@ -18,18 +20,20 @@ void setup()
 
   //FindBoard
   StartDriving();
-  CheckFrontSensor(30, 1);
+  CheckFrontSensor(30, 1, 38000);
   ReachBoardTurn(); //first turn at board
+  starttime=millis();
 
   //FollowBoard
   StartDriving();
-  FollowRightSensor(300, 1);
+  FollowRightSensor(300, 1, 38000);
+  elaspedtime=millis()-starttime;
   AroundBoardTurn(); //second turn at the end of board
 
   //AcrossSideBoard
   StartDriving();
   CheckRightSensor(); //find the beginning board 
-  FollowRightSensor(0, 2); //drive till end of board (FollowSideSensor calls StopDriving)
+  FollowRightSensor(0, 2, 38000); //drive till end of board (FollowSideSensor calls StopDriving)
   StartDriving();
   StopImmediate();      //bridge the gap (hard coded)
 
@@ -46,14 +50,15 @@ void setup()
   //CheckFrontCup();
   //AroundBoardTurn();
   Reverse();
+  delay(25);
   TurnLeft();
   StartDriving();
   CheckRightSensor();
-  FollowRightSensor(650, 1);
+  FollowRightSensor(700, 1, 42000);
   AroundBoardTurn();
   StartImmediate();
   //delay(90);
-  CheckFrontSensor(180, 2);
+  CheckFrontSensor(180, 2, 40000);
   ReverseFaceCup(); //face the middle cup
 
   //FindMiddleCup
@@ -71,11 +76,11 @@ void setup()
   TurnLeft();
   StartImmediate();
   CheckRightSensor();
-  FollowRightSensor(650, 1);
+  FollowRightSensor(700, 1, 42000);
   AroundBoardTurn();
   StartImmediate();
   //delay(90);
-  CheckFrontSensor(180, 2);
+  CheckFrontSensor(180, 2, 40000);
   ReverseFaceCup(); //face the end cup
 
   //FindBoulder
@@ -91,17 +96,22 @@ void setup()
   Reverse();
   TurnLeft();
   StartDriving();
-  FollowRightSensor(900, 1);
+  FollowRightSensor(650, 1, 40000);
 
   //NavigateEndofBoard
   AroundBoardTurn();
   StartDriving();
   CheckRightSensor(); //find the beginning board 
-  FollowRightSensor(850, 2); //drive till end of board (FollowSideSensor calls StopDriving)
+  FollowRightSensor(850, 2, 38000); //drive till end of board (FollowSideSensor calls StopDriving)
   AroundBoardTurn();
 
   //BacktoOriginal
   StartDriving();
+  delay(pacetime-elaspedtime);
+  ReachBoardTurn();
+  StartDriving();
+  delay(100);
+  StopImmediate();
   
 
   

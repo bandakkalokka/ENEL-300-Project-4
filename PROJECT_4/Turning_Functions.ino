@@ -7,14 +7,14 @@ void ReachBoardTurn(){
 
 void AroundBoardTurn(){
   ServoRight.writeMicroseconds(1550);
-  delay (1200);
+  delay (1175);
   ServoLeft.writeMicroseconds(1500);
   delay (1000);
 }
 
 void FaceBoardTurn(){
   ServoRight.writeMicroseconds(1550);
-  delay (2090);
+  delay (2390);
   //ServoRight.writeMicroseconds(1500);
   //delay (1000);
   ServoLeft.writeMicroseconds(1500);
@@ -24,7 +24,7 @@ void FaceBoardTurn(){
 void TurnLeft() {
   ServoLeft.writeMicroseconds(1500);
   ServoRight.writeMicroseconds(1300);
-  delay(1250);
+  delay(1300);
   ServoRight.writeMicroseconds(1500);
 }
 

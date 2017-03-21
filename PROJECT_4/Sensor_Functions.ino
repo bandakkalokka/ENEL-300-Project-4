@@ -2,16 +2,16 @@ int irFront, irRight;
 int counter=0;
 int timespan;
 
-int CheckFrontSensor(int distance, int stopper)
+int CheckFrontSensor(int distance, int stopper, int frequency)
 {
   while (1){
-  irFront=irDetect(FRONT_IR_LED, FRONT_IR_SENSOR, 38000);                           
+  irFront=irDetect(FRONT_IR_LED, FRONT_IR_SENSOR, frequency);                           
   
   if(irFront==0){  
     counter=0;                         
     for(timespan=0; timespan<distance; timespan++){
       
-      if (irDetect(FRONT_IR_LED,FRONT_IR_SENSOR,38000)==0){
+      if (irDetect(FRONT_IR_LED,FRONT_IR_SENSOR, frequency)==0){
       counter++;}
     
       if(counter >= distance){
@@ -25,16 +25,18 @@ int CheckFrontSensor(int distance, int stopper)
     delay(50);}             
  }   
 
-void FollowRightSensor(int pause, int stopdriving)
+void FollowRightSensor(int pause, int stopdriving, int frequency)
 {
 while (1){
-  irRight=irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000);
+  irRight=irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, frequency);
+  //Serial.println("Right:");                          
+  //Serial.println(irRight);
   
   if(irRight==1){
     counter=0;                           
     for(timespan=0; timespan<10; timespan++){
     
-      if (irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR,38000)==1){
+      if (irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR,frequency)==1){
       counter++;}
     
       if(counter >= 10){ 
@@ -66,6 +68,9 @@ int irDetect(int irLedPin, int irReceiverPin, long frequency)
   tone(irLedPin, frequency, 8);              // IRLED 38 kHz for at least 1 ms
   delay(1);                                  // Wait 1 ms
   int ir = digitalRead(irReceiverPin);       // IR receiver -> ir variable
+  if (irLedPin==6){
+    Serial.println(ir);
+  }
   delay(1);                                  // Down time before recheck
   return ir;                                 // Return 1 no detect, 0 detect
   }  
@@ -74,8 +79,8 @@ int CheckFrontCup()
 {
   while (1){
   irFront=irDetect(FRONT_IR_LED, FRONT_IR_SENSOR, 38000);       
-  Serial.println("Front:"); 
-  Serial.println(irFront);                    
+  //Serial.println("Front:"); 
+  //Serial.println(irFront);                    
   
   if(irFront==0){  
     counter=0;                         
@@ -95,8 +100,9 @@ int CheckFrontCup()
 int CheckRightSensor()
 {
   while (1){
-  irRight=irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000);                          
-  Serial.println(irFront);
+  irRight=irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000); 
+  //Serial.println("Right:");                          
+  //Serial.println(irRight);
   if(irRight==0){  
     counter=0;                         
     for(timespan=0; timespan<30; timespan++){

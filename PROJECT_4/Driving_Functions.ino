@@ -43,7 +43,7 @@ void StopImmediate() {
 }
 
 void StartImmediate(){
-  ServoLeft.writeMicroseconds(1700);
-  ServoRight.writeMicroseconds(1300);
+  ServoLeft.writeMicroseconds(MAX_LEFT_SPEED);
+  ServoRight.writeMicroseconds(MAX_RIGHT_SPEED);
 }
 
