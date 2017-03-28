@@ -24334,6 +24334,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="U$2" library="BUZZER" deviceset="BUZZER" device=""/>
 <part name="GND29" library="supply1" deviceset="GND" device=""/>
 <part name="R7" library="resistor" deviceset="R-US_" device="0207/2V" value="220R"/>
+<part name="U$4" library="IR_LED" deviceset="IR_LED" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -24590,6 +24591,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <instance part="U$2" gate="G$1" x="695.96" y="137.16" rot="R270"/>
 <instance part="GND29" gate="1" x="660.4" y="101.6"/>
 <instance part="R7" gate="G$1" x="487.68" y="33.02"/>
+<instance part="U$4" gate="G$1" x="530.86" y="33.02" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -25646,6 +25648,13 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <label x="180.34" y="43.18" size="1.778" layer="95"/>
 <pinref part="ZU4" gate="G$1" pin="(AIN1)PD7"/>
 <pinref part="IOL" gate="A" pin="8"/>
+<pinref part="R7" gate="G$1" pin="1"/>
+<wire x1="482.6" y1="33.02" x2="449.58" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="449.58" y1="33.02" x2="449.58" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="449.58" y1="17.78" x2="342.9" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="342.9" y1="17.78" x2="342.9" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="342.9" y1="40.64" x2="220.98" y2="40.64" width="0.1524" layer="91"/>
+<junction x="220.98" y="40.64"/>
 </segment>
 </net>
 <net name="IO8" class="0">
@@ -25801,6 +25810,13 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="175.26" y1="78.74" x2="182.88" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="ZU4" gate="G$1" pin="(SCK)PB5"/>
 <label x="206.375" y="86.36" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="ANODE"/>
+<pinref part="R7" gate="G$1" pin="2"/>
+<wire x1="510.54" y1="33.02" x2="492.76" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

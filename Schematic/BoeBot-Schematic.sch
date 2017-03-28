@@ -24375,6 +24375,13 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="723.9" y1="210.82" x2="723.9" y2="5.08" width="2.54" layer="94"/>
 <wire x1="723.9" y1="5.08" x2="292.1" y2="5.08" width="2.54" layer="94"/>
 <wire x1="292.1" y1="5.08" x2="292.1" y2="210.82" width="2.54" layer="94"/>
+<text x="297.18" y="-55.88" size="5.08" layer="91">The Servo Motors, IR-Sensors, IR-LED's and the Buzzer were connected to the Parallax Shield and Arduino as indicated above. 
+Resistor values were manipulated to obtain and optimal detection range. 
+
+Common Problems:
+-The IR-Sensors and IR-LED's would keep getting out of alignment so the stopping distance would not be consistent.
+(A better solution would have been to use a single device rather than 2 seperate devices working together)
+</text>
 </plain>
 <instances>
 <instance part="ZU4" gate="G$1" x="157.48" y="53.34"/>
@@ -25838,4 +25845,10 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>

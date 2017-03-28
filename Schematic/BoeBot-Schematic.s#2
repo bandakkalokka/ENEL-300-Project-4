@@ -24369,6 +24369,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <text x="497.84" y="63.5" size="1.778" layer="91" rot="R180">RIGHT_IR_SENSOR</text>
 <text x="581.66" y="121.92" size="1.778" layer="91" rot="R180">FONT_IR_LED</text>
 <text x="581.66" y="58.42" size="1.778" layer="91" rot="R180">RIGHT_IR_LED</text>
+<text x="525.78" y="17.78" size="1.778" layer="91">RED_LED</text>
+<text x="690.88" y="111.76" size="1.778" layer="91">BUZZER</text>
 </plain>
 <instances>
 <instance part="ZU4" gate="G$1" x="157.48" y="53.34"/>

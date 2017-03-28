@@ -24332,6 +24332,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="R5" library="resistor" deviceset="R-US_" device="0207/2V" value="220R"/>
 <part name="R6" library="resistor" deviceset="R-US_" device="0207/2V" value="220R"/>
 <part name="U$2" library="BUZZER" deviceset="BUZZER" device=""/>
+<part name="GND29" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -24586,6 +24587,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <instance part="R5" gate="G$1" x="398.78" y="119.38"/>
 <instance part="R6" gate="G$1" x="398.78" y="111.76"/>
 <instance part="U$2" gate="G$1" x="695.96" y="137.16" rot="R270"/>
+<instance part="GND29" gate="1" x="660.4" y="101.6"/>
 </instances>
 <busses>
 </busses>
@@ -24940,6 +24942,12 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <pinref part="GND27" gate="1" pin="GND"/>
 <wire x1="601.98" y1="137.16" x2="607.06" y2="137.16" width="0.1524" layer="91"/>
 <wire x1="607.06" y1="137.16" x2="607.06" y2="121.92" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="CATHODE"/>
+<pinref part="GND29" gate="1" pin="GND"/>
+<wire x1="670.56" y1="124.46" x2="660.4" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="660.4" y1="124.46" x2="660.4" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="AREF" class="4">

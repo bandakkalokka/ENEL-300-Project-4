@@ -24165,7 +24165,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <library name="BUZZER">
 <packages>
 <package name="BUZZER">
-<pad name="GND" x="0" y="3.81" drill="0.8" shape="square"/>
+<pad name="ANODE" x="0" y="3.81" drill="0.8" shape="square"/>
 <pad name="CATHODE" x="0" y="-3.81" drill="0.8" shape="square"/>
 </package>
 </packages>
@@ -24191,7 +24191,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <devices>
 <device name="" package="BUZZER">
 <connects>
-<connect gate="G$1" pin="ANODE" pad="GND"/>
+<connect gate="G$1" pin="ANODE" pad="ANODE"/>
 <connect gate="G$1" pin="CATHODE" pad="CATHODE"/>
 </connects>
 <technologies>
