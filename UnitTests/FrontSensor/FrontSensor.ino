@@ -53,6 +53,7 @@ void loop() {
 }
 
 
+
 int irDetect(int irLedPin, int irReceiverPin, long frequency){
   tone(irLedPin, frequency, 8);              // IRLED 38 kHz for at least 1 ms
   delay(1);                                  // Wait 1 ms
@@ -61,8 +62,12 @@ int irDetect(int irLedPin, int irReceiverPin, long frequency){
   return ir;                                 // Return 1 no detect, 0 detect
 } 
 
+
+
 /* Code for void StopDriving implemented in StopDriving UnitTest */
 void StopDriving(){}
+
+
 
 /* Code for void StopImmedrate implemented in StopImmediate UnitTest */
 void StopImmediate(){}
