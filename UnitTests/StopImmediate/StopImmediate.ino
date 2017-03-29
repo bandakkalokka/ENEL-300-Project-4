@@ -8,10 +8,14 @@
  * 
  */
 
+#include <Servo.h>
+
 #define MIN_SPEED             1500              // Stop speed for the servos
 #define RIGHT_SERVO           13                // Right Servo pin number
 #define LEFT_SERVO            12                // Left Servo pin number
 
+Servo ServoLeft;
+Servo ServoRight;
 
 
 void setup() {
