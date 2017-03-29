@@ -13,3 +13,6 @@ An design project by 2nd year Electrical Engineering students at the Schulich Sc
 - **PROJECT_4** contains the code for navigating around the cups
 - **Schematic** contains the Schematic files (Autodesk Eagle)
 - **UnitTests** contains all the Unit Tests that were performed on the BoeBot
+
+
+![GitHub Logo](/Schematic/BoeBot-Right.jpg)
