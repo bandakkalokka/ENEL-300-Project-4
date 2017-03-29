@@ -55,18 +55,6 @@ while (1){
     delay(50);
 }
 
-void Edge()
-{
-  
-int count =0;
-while(1)
-{
-  if (irDetect(6,4,38000) == 0)
-      return; 
-}
-delay(100);
-}
-
 int irDetect(int irLedPin, int irReceiverPin, long frequency)
 {
   tone(irLedPin, frequency, 8);              // IRLED 38 kHz for at least 1 ms
