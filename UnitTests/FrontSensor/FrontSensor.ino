@@ -1,8 +1,8 @@
 /*
  * 
- *  void CheckFrontSensor() and void CheckRightSensor()
+ *  int CheckFrontSensor() and int CheckRightSensor()
  *  
- *  The purpose of the CheckFrontSensor() function is to check for obstacles using the front sensor.
+ *  The purpose of the CheckFrontSensor() and CheckRightSensor functions is to check for obstacles using the front sensor.
  *  The helper function irDetect(LED, Sensor, Frequency) is used to parse the input from the sensor.
  *  The sensor is listening at a frequency of 38000Hz (infared), and the digitalRead function is called
  *  every 2 ms. The counter variable is used to count the number of 0's seen since first seeing an object.
@@ -113,7 +113,6 @@ void StopDriving(){
   ServoLeft.writeMicroseconds(MIN_SPEED);                                         // Set Servo's to stop after
   ServoRight.writeMicroseconds(MIN_SPEED);                                        // deceleration is complete
 }
-
 
 
 /* Code for void StopImmedrate() implemented in StopImmediate UnitTest */
