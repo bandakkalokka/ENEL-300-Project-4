@@ -8,12 +8,16 @@
  * 
  */
 
+
+#include <Servo.h>
+
 #define MAX_RIGHT_SPEED       1400              // Max Speed for the Right Servo
 #define MAX_LEFT_SPEED        1638              // Max Speed for the Left Servo
 #define RIGHT_SERVO           13                // Right Servo pin number
 #define LEFT_SERVO            12                // Left Servo pin number
 
-
+Servo ServoLeft;
+Servo ServoRight;
 
 void setup() {
   pinMode(RIGHT_SERVO, OUTPUT);  pinMode(LEFT_SERVO, OUTPUT);     // Assign pins for servos
