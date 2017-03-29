@@ -8,10 +8,10 @@
  * 
  */
 
-#define MAX_RIGHT_SPEED       1400 
-#define MAX_LEFT_SPEED        1638
-#define RIGHT_SERVO           13
-#define LEFT_SERVO            12
+#define MAX_RIGHT_SPEED       1400              // Max Speed for the Right Servo
+#define MAX_LEFT_SPEED        1638              // Max Speed for the Left Servo
+#define RIGHT_SERVO           13                // Right Servo pin number
+#define LEFT_SERVO            12                // Left Servo pin number
 
 
 
@@ -22,7 +22,7 @@ void setup() {
   ServoRight.attach(RIGHT_SERVO);
 
   ServoRight.writeMicroseconds(MAX_RIGHT_SPEED);                  // Pulse Right Servo at max speed
-  ServoLeft.writeMicroseconds(MAX_LEFT_SPEED);                    // Pulse Left Servo at max speed
+  ServoLeft.writeMicroseconds(MAX_LEFT_SPEED);                    // Pulse Left Servo at max speeds
 }
 
 
