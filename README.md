@@ -14,5 +14,5 @@ An design project by 2nd year Electrical Engineering students at the Schulich Sc
 - **Schematic** contains the Schematic files (Autodesk Eagle)
 - **UnitTests** contains all the Unit Tests that were performed on the BoeBot
 
-
+## Right-Side View of the BoeBot
 ![GitHub Logo](/Schematic/BoeBot-Right.jpg)
