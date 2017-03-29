@@ -20,6 +20,10 @@ int CheckFrontSensor(int distance, int stopper, int frequency)
       else if(stopper == 2) {
           StopImmediate();
       }
+      else if(stopper ==3){
+        delay(150);
+        StopDriving();
+      }
       return 0;}}
   }
     delay(50);}             
@@ -48,7 +52,7 @@ while (1){
       return;}}
   }
 }
-    delay(100);
+    delay(50);
 }
 
 void Edge()
@@ -97,17 +101,17 @@ int CheckFrontCup()
  }
 
 
-int CheckRightSensor()
+int CheckRightSensor(int frequency)
 {
   while (1){
-  irRight=irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, 38000); 
+  irRight=irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, frequency); 
   //Serial.println("Right:");                          
   //Serial.println(irRight);
   if(irRight==0){  
     counter=0;                         
     for(timespan=0; timespan<30; timespan++){
       
-      if (irDetect(RIGHT_IR_LED,RIGHT_IR_SENSOR,38000)==0){       // if object detected, increase counter
+      if (irDetect(RIGHT_IR_LED,RIGHT_IR_SENSOR,frequency)==0){       // if object detected, increase counter
       counter++;}
     
       if(counter >= 30){ 

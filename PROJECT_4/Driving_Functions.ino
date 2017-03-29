@@ -32,9 +32,9 @@ void StopDriving()
 }
   
 void Reverse() {
-  ServoLeft.writeMicroseconds(1400);
-  ServoRight.writeMicroseconds(1639);
-  delay(1200);
+  ServoLeft.writeMicroseconds(MAX_RIGHT_SPEED);
+  ServoRight.writeMicroseconds(MAX_LEFT_SPEED);
+  delay(1000);
 }
 
 void StopImmediate() {
