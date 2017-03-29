@@ -2,7 +2,7 @@
  * 
  * void StopImmediate()
  * 
- * The purpose of the StartImmediate() function is to stop the BoeBot from moving
+ * The purpose of the StopImmediate() function is to stop the BoeBot from moving
  * as soon as the function is called.
  * 
  * 
