@@ -1,6 +1,6 @@
 /*
  * 
- *  void CheckFrontSensor()
+ *  void CheckFrontSensor() and void CheckRightSensor()
  *  
  *  The purpose of the CheckFrontSensor() function is to check for obstacles using the front sensor.
  *  The helper function irDetect(LED, Sensor, Frequency) is used to parse the input from the sensor.
@@ -25,6 +25,7 @@ int frequency = 38000;                          // An arguement in CheckFrontSen
 
 void setup() {
   pinMode(FRONT_IR_LED, OUTPUT);    pinMode(FRONT_IR_SENSOR, INPUT);      // Assign pins
+  StartDriving();
 }
 
 
@@ -63,11 +64,11 @@ int irDetect(int irLedPin, int irReceiverPin, long frequency){
 } 
 
 
+/* Code for voidStartDriving() implemented in DriveForwards UnitTest */
+void StartDriving(){}
 
-/* Code for void StopDriving implemented in StopDriving UnitTest */
+/* Code for void StopDriving() implemented in StopDriving UnitTest */
 void StopDriving(){}
 
-
-
-/* Code for void StopImmedrate implemented in StopImmediate UnitTest */
+/* Code for void StopImmedrate() implemented in StopImmediate UnitTest */
 void StopImmediate(){}
