@@ -6,7 +6,7 @@
  * and turn the right wheel clockwise to turn the BoeBot left by 90 degrees.
  * 
  * Note: The void TurnLeft() function is very similar to void ReachBoardTUrn(), 
- * void ReverseFaceCup, void ReverseFaceCupTwo, void ReverseFaceCupThree. The
+ * void ReverseFaceCup(), void ReverseFaceCupTwo(), void ReverseFaceCupThree(). The
  * only differences are that the OPT_LEFT_TURN and TURN_DELAY values are 
  * tweaked due to the inconsistencies of the BoeBot. The specific inconsistencies
  * are discussed in the hardware section of the Detailed Design Resport.
@@ -26,17 +26,16 @@ Servo ServoLeft;
 Servo ServoRight;
 
 void setup() {
-  pinMode(RIGHT_SERVO, OUTPUT);  pinMode(LEFT_SERVO, OUTPUT);     // Assign pins for servos
   ServoLeft.attach(RIGHT_SERVO);
   ServoRight.attach(LEFT_SERVO);
   
-  TurnLeft();
+  TurnLeft();                                       // Call to TurnLeft() function
 }
 
 
 void TurnLeft() {
   StopImmediate();
-  ServoRight.writeMicroseconds(OPT_LEFT_TURN); 
+  ServoRight.writeMicroseconds(OPT_LEFT_TURN);                // Pulse Right Servo at 1350 for 1100ms
   delay(TURN_DELAY);
 }
 
