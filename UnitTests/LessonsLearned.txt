@@ -1,5 +1,0 @@
-Lessons Learned:
-  
-  	1. All Servo's must be detached at the end once they are 
-	   not needed any more, or else, they will not function 
-	   as expected when code is changed to use only one servo.
