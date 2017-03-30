@@ -1,8 +1,8 @@
 void ReachBoardTurn(){
-   ServoLeft.writeMicroseconds(1450);
-  delay (1780);
-  ServoLeft.writeMicroseconds(1500);
-  delay (1000);
+   ServoLeft.writeMicroseconds(1450);   //left servo turning at 1450 speed
+  delay (1780);                         //how long the turn lasts
+  ServoLeft.writeMicroseconds(1500);    //stopping the turn
+  delay (1000);                         //cushion delay to prevent tugging on carpet with an immediate task
 }
 
 void AroundBoardTurn(){
@@ -11,23 +11,15 @@ void AroundBoardTurn(){
   ServoLeft.writeMicroseconds(1500);
   delay (1000);}
 
-void AroundBoardTurn2(){
+void AroundCupTurn(int pause){
   ServoRight.writeMicroseconds(1550);
-  delay (1100);
+  delay (pause);
   ServoLeft.writeMicroseconds(1500);
   delay (1000);}
 
 void FaceBoardTurn(){
   ServoRight.writeMicroseconds(1550);
   delay (2150);
-  ServoLeft.writeMicroseconds(1500);
-  ServoRight.writeMicroseconds(1500);
-} 
-
-void FaceBoardTurn2(){
-  ServoRight.writeMicroseconds(1550);
-  delay (1850);
-  ServoLeft.writeMicroseconds(1500);
   ServoRight.writeMicroseconds(1500);
 } 
 
@@ -38,24 +30,11 @@ void TurnLeft() {
   ServoRight.writeMicroseconds(1500);
 }
 
-void ReverseFaceCup(){
+void ReverseFaceCup(int pause){
    ServoLeft.writeMicroseconds(1450);
-  delay (1840);
+  delay (pause);
   ServoLeft.writeMicroseconds(1500);
   delay (1000);
 }
 
-void ReverseFaceCupTwo(){
-  ServoLeft.writeMicroseconds(1450);
-  delay (1725);
-  ServoLeft.writeMicroseconds(1500);
-  delay (1000);
-}
-
-void ReverseFaceCupThree(){
-  ServoLeft.writeMicroseconds(1450);
-  delay (980);
-  ServoLeft.writeMicroseconds(1500);
-  delay (1000);
-}
 

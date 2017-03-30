@@ -3,7 +3,7 @@ int ServoLeftSpeed = MIN_SPEED;
 
 void StartDriving()
 {  
-  for(int deltaSpeed = 0; deltaSpeed < MAX_DELTA_SPEED; deltaSpeed += ACCELERATION) {
+  for(int deltaSpeed = 0; deltaSpeed < MAX_DELTA_SPEED; deltaSpeed += ACCELERATION) {   //loops for a slow acceleration
     ServoLeftSpeed = MIN_SPEED + deltaSpeed;
     ServoRightSpeed = MIN_SPEED - deltaSpeed;
     
@@ -32,7 +32,7 @@ void StopDriving()
 }
   
 void Reverse() {
-  ServoLeft.writeMicroseconds(MAX_RIGHT_SPEED);
+  ServoLeft.writeMicroseconds(MAX_RIGHT_SPEED);           //MAX_RIGHT_SPEED is reverse for the left zero and vice versa
   ServoRight.writeMicroseconds(MAX_LEFT_SPEED);
   delay(1000);
 }
