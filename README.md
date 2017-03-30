@@ -9,6 +9,7 @@ This project presented a client’s need of an autonomous device that could exec
 - **Custom-Eagle-Libraries** contains the library files for custom parts (Autodesk Eagle)
 - **PROJECT_4** contains the code for navigating around the cups
 - **Schematic** contains the Schematic files (Autodesk Eagle)
+- **UML**  contains the UML diagram
 - **UnitTests** contains all the Unit Tests that were performed on the BoeBot
 
 ## Contributors:
