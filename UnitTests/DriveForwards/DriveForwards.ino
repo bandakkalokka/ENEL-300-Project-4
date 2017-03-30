@@ -34,7 +34,11 @@ void setup() {
     
   ServoLeft.attach(12);
   ServoRight.attach(13);
+  StartDriving();                                 // Call StartDriving Function
+}
 
+
+void StartDriving() {
   for(int deltaSpeed = 0; deltaSpeed < MAX_DELTA_SPEED; deltaSpeed += ACCELERATION) {
     ServoLeftSpeed = MIN_SPEED + deltaSpeed;
     ServoRightSpeed = MIN_SPEED - deltaSpeed;
