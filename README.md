@@ -1,6 +1,6 @@
 # ENEL-300-Project-4
 
-An design project by 2nd year Electrical Engineering students at the Schulich School of Engineering
+A design project by 2nd year Electrical Engineering students at the Schulich School of Engineering
 
 ## Project Description
 This project presented a client’s need of an autonomous device that could execute search and rescue missions in the event of an avalanche. The problem to be solved consisted of deploying the device, having it navigate obstacles, locate a beacon and return to the garage.   The problem was solved using an Arduino BoeBot, infrared sensors and software to control the device. Detailed schematics of the electrical hardware of the BoeBot are included as well as a Unified Modeling Language Finite State Machine used in designing the software.
