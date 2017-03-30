@@ -33,8 +33,6 @@ void FollowRightSensor(int pause, int stopdriving, int frequency)
 {
 while (1){
   irRight=irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, frequency);
-  //Serial.println("Right:");                          
-  //Serial.println(irRight);
   
   if(irRight==1){
     counter=0;                           
@@ -70,9 +68,7 @@ int irDetect(int irLedPin, int irReceiverPin, long frequency)
 int CheckFrontCup()
 {
   while (1){
-  irFront=irDetect(FRONT_IR_LED, FRONT_IR_SENSOR, 38000);       
-  //Serial.println("Front:"); 
-  //Serial.println(irFront);                    
+  irFront=irDetect(FRONT_IR_LED, FRONT_IR_SENSOR, 38000);                          
   
   if(irFront==0){  
     counter=0;                         
@@ -93,8 +89,6 @@ int CheckRightSensor(int frequency)
 {
   while (1){
   irRight=irDetect(RIGHT_IR_LED, RIGHT_IR_SENSOR, frequency); 
-  //Serial.println("Right:");                          
-  //Serial.println(irRight);
   if(irRight==0){  
     counter=0;                         
     for(timespan=0; timespan<30; timespan++){
@@ -103,7 +97,6 @@ int CheckRightSensor(int frequency)
       counter++;}
     
       if(counter >= 30){ 
-      //StopImmediate();
       return 0;}}
   }
     delay(100);}             

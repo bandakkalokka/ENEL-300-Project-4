@@ -20,8 +20,6 @@ void AroundBoardTurn2(){
 void FaceBoardTurn(){
   ServoRight.writeMicroseconds(1550);
   delay (2150);
-  //ServoRight.writeMicroseconds(1500);
-  //delay (1000);
   ServoLeft.writeMicroseconds(1500);
   ServoRight.writeMicroseconds(1500);
 } 
@@ -29,8 +27,6 @@ void FaceBoardTurn(){
 void FaceBoardTurn2(){
   ServoRight.writeMicroseconds(1550);
   delay (1850);
-  //ServoRight.writeMicroseconds(1500);
-  //delay (1000);
   ServoLeft.writeMicroseconds(1500);
   ServoRight.writeMicroseconds(1500);
 } 

@@ -132,80 +132,9 @@ void setup()
   delay(2450);
   StopImmediate();
   
-
- // else 
-//  {                                                  //cup close
-//    FollowSideSensor(60, 2);
-//    NinteyDegreeTurn2();
-//    StartDriving();
-//  }
-
-  //StartDriving();
-  //while(1) {
-//    digitalWrite(LED, HIGH);
-//    delay(200);
-//    digitalWrite(LED,LOW);
-//    Serial.println(CheckRightSensor());
-//    if(!CheckRightSensor()) {
-//      FollowRightSensor(500, 1);
-//      break;
-//    }
-//  }
-
-  
-//  AroundBoardTurn();
-//  StartDriving();
-//  //delay(90);
-//  CheckFrontSensor();
-//  ReverseFaceCup();
-//  StartImmediate();
-//  CheckFrontCup();
-//  Beep();
-
-  
-  //NinteyDegreeTurn2();
-  //StopDriving();
-  
-  
-  
 }
 
-void loop()
-{ /*
-  Serial.print (irDetect(6, 4, 38000));
-  if (irDetect(6, 4, 38000)==0){
-    FollowSideSensor();
-    exit(1);
-  }
-  */
 
-  /*
-   * 
-   *  FIND_BOARD   0
-   *  FOLLOW_BOARD 1
-   *  
-   * 
-   *  int irfront = check front
-   *  int irRight = check right
-   *  
-   *  switch(state):
-   *  
-   *  case FIND_BOARD:
-   *    if(!irfront)
-   *      turn left
-   *      state = FOLLOW_BOARD
-   *    break;
-   *    
-   * case FOLLOWW_BOARD:
-   *    if(irRight)
-   *      turn right
-   *    break;
-   * 
-   * case PASS_BOARD_WIDTH:
-   *    if(!irRight)
-   *      
-   */
-  
-  }
+void loop(){}
   
 
